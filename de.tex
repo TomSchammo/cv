@@ -1,0 +1,214 @@
+%----------------------------------------------------------------------------------------
+%	DOKUMENTDEFINITION
+%----------------------------------------------------------------------------------------
+
+% !TeX ltex: language=de
+
+% article Klasse, da wir die Seite vollständig anpassen und keine Lebenslaufvorlage verwenden möchten
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	SCHRIFTART
+%----------------------------------------------------------------------------------------
+
+% % fontspec erlaubt die direkte Verwendung von TTF/OTF-Schriften
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % angepasst für ShareLaTeX
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PAKETE
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip}
+
+%weitere Pakete zur Formatierung
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx Umgebung
+\usepackage{tabularx}
+
+%für Listen innerhalb des Erfahrungsbereichs
+\usepackage{enumitem}
+
+% zentrierte Version des 'X' Spaltentyps
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%um das Überlaufen von tabular auf die nächsten Seiten zu verhindern
+\usepackage{supertabular}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%benutzerdefinierte \section
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+
+%Lebenslaufabschnitte inspiriert von:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%für Publikationen
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup des hyperref Pakets und Farben für Links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%für soziale Symbole
+\usepackage{fontawesome5}
+
+%Rahmen zur Fehlerbehebung der Seite
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGINN DOKUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% nicht nummerierte Seiten
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%	TITEL
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Dein Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ Benutzername \ | \
+% \raisebox{-0.00\height}\faLinkedin\ Benutzername \ | \ \raisebox{-0.05\height}\faGlobe \ meineSeite.com  & \hfill \emoji{calling} Telefonnummer
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Tom Schammo} \\[7.5pt]
+\href{https://github.com/TomSchammo}{\raisebox{-0.05\height}\faGithub\ Tom Schammo} \ $|$ \
+\href{https://www.linkedin.com/in/tom-schammo-a1496a308/}{\raisebox{-0.05\height}\faLinkedin\ Tom Schammo} \ $|$ \
+% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ meineSeite.com} \ $|$ \
+\href{mailto:tom@tomschammo.com}{\raisebox{-0.05\height}\faEnvelope \ tom@tomschammo.com} \ $|$ \
+\href{tel:+352 621 48 0040}{\raisebox{-0.05\height}\faMobile \ +352 621 48 0040} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	AUSBILDUNG
+%----------------------------------------------------------------------------------------
+\section{Ausbildung}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    2019 - 2024 & B.Sc. (Informatik) an der \textbf{Universität Tübingen} \hfill \normalsize (Note: 2,36) \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \footnotesize{
+    Kurse umfassen:
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Programming Ultra Low Power Architectures: Ein M.Sc. Kurs, der Studierenden Stromspaarzustände, Hardware-Treiber, Busse und Hardware-Interrupts näher bringt.
+        \item[--] Massively Parallel Computing: Ein M.Sc. Kurs, in dem die Programmierung von GPUs mittels CUDA gelehrt wird, um diverse Probleme effizienter zu lösen, wie z.B. Matrixmultiplikation oder die Manipulation von Datenstrukturen.
+        \item[--] Teamprojekt: Ein Kurs, in dem Studierende lernen ein Software-Projekt im Team zu planen und umzusetzen. Insbesondere wird die Versionskontrolle mittels git erlernt.
+        \item[--] Abschlussarbeit: Das Ziel meiner Abschlussarbeit war die (Audio-)Schlüsselworterkennung auf eingebetteten Geräten zu verbessern.    \end{itemize}} \end{minipage}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% BERUFSERFAHRUNG
+%----------------------------------------------------------------------------------------
+
+%Interessen/ Schlüsselwörter/ Zusammenfassung
+% \section{Zusammenfassung}
+% Dieser Lebenslauf kann auch automatisch mithilfe von GitHub Actions erstellt und veröffentlicht werden. Für Details, \href{https://github.com/jitinnair1/autoCV}{hier klicken}.
+
+%Erfahrung
+\section{Berufserfahrung}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Universität Tübingen} & \hfill Nov 2023 - heute \\
+    \footnotesize{Wissenschaftlicher Mitarbeiter}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \footnotesize{
+    Im Rahmen eines Forschungsprojekts zu selbstfahrenden Autos habe ich die vollständige Entwicklung einer Lidar-Punktwolken-Augmentierungsbibliothek übernommen.
+    Diese stellt verschiedene SOTA-Augmentierungsmethoden durch ein einfach zu bedienendes Python-Frontend bereit, während die Leistung aufgrund des effizienten C++-Backends erheblich verbessert wird.
+
+    Als alleiniger Entwickler war ich für die konzeptionelle Planung, Programmierung und Testung der
+    Bibliothek verantwortlich, wodurch ich meine Fähigkeiten entwickelte, mittelgroße Projekte eigenständig von Anfang bis Ende durchzuführen.
+}}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+    \textbf{Octoshrew Ltd.} &  \hfill Nov 2022 - Nov 2023 \\
+    \footnotesize{Junior Entwickler}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \footnotesize{
+        Als Junior Entwickler war ich an der Entwicklung modernster Pfadplanungs- und autonomen Steuerungssysteme
+        für Drohnen beteiligt. Insbesondere war ich für die Pfadfindung verantwortlich und entwickelte die Datenstrukturen und Algorithmen, um
+        eine sichere und effiziente Navigation im 3D-Raum zu gewährleisten, wodurch ich meine Fähigkeiten in Algorithmen und Leistungsoptimierung/Parallelisierung verbesserte.
+    }}
+\end{tabularx}
+
+%Projekte
+\section{Projekte}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Implementierung und Analyse verschiedener Eingabequellen auf der Ultratrail-Architektur} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \footnotesize{
+    Für meine Abschlussarbeit arbeitete ich an der Implementierung eines Rust-Treibers für den Ultratrail AI-Beschleuniger auf dem PULPissimo-Board
+    (ein Entwicklungsboard für einen von der ETH Zürich entwickelten RISC-V-Chip), um eine effiziente Schlüsselworterkennung in Audio zu ermöglichen.
+
+    Durch die Verbesserung der Sicherheit mittels der Programmiersprache Rust gegenüber des bestehenden C-Treibers
+    verbesserte ich meine Fähigkeiten und erweiterte mein Wissen in der eingebetteten Programmierung sowie in der Fehlersuche auf Hardwareebene
+    mithilfe von Werkzeugen wie Oszilloskopen oder Logikanalysatoren.}
+}  \\
+
+\textbf{Programming Ultra Low Power Architectures} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+
+    \footnotesize{
+        Ich baute einen 'Wecker' also proof-of-concept mit einem Entwicklungsboard und Peripheriegeräten (LED-Display, Tastatur, Lautsprecher).
+        Der Wecker nutzte Tiefschlafzustände, um sehr energieeffizient zu sein und überlebte 12 Stunden allein auf einem kleinen Kondensator.
+    Zum Vergleich: Mit einer AA-Batterie würde der Wecker 130'000 bis 220'000 Stunden im Energiesparmodus halten.
+
+    Das Projekt bot mir die Möglichkeit, Einblicke in die Nutzung von Hardwaredokumentationen sowie in die
+    Entwicklung und Fehlersuche von Hardwaretreibern und eingebetteten Anwendungen zu gewinnen.
+    Zusätzlich bot es die Gelegenheit, die Nutzung von Prozessor-Schlafzuständen und Werkzeugen zur
+    Messung des Stromverbrauchs zu erkunden, was zu verbesserten batteriebetriebenen Designs führte.
+}}\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLIKATIONEN
+%----------------------------------------------------------------------------------------
+% \section{Publikationen}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	FÄHIGKEITEN
+%----------------------------------------------------------------------------------------
+\section{Fähigkeiten}
+\footnotesize{
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{Sprachen}: & { Englisch (C2), Deutsch (Muttersprache), Luxemburgisch (Muttersprache), Französisch (B2)} \\
+    \textbf{Programmiersprachen}: & { C, C++, CUDA, Python, Rust, RISC-V Assembler, Mips Assembler} \\
+    \textbf{Entwicklungstools}: & { Make, CMake, Git, GitHub, GitLab, Linux, Docker, Logic Analyer, Oszilloskop} \\
+    \textbf{Frameworks}: & { Libtorch, Boost, Google Test, ROS, PyTest, Numpy} \\
+ % \textbf{Soft Skills}{: } \\
+ % \textbf{Interessensgebiete}{: } \\
+\end{tabularx}
+}
+% \vfill
+% \center{\footnotesize Zuletzt aktualisiert: \today}
+\end{document}
