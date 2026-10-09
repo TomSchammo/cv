@@ -21,9 +21,15 @@ jobs:
     - name: Build document
       run: make
 
+    - name: Flatten output
+      run: |
+        mkdir -p site
+        cp output/en/en.pdf site/en.pdf
+        cp output/de/de.pdf site/de.pdf
+
     - uses: actions/upload-pages-artifact@v3
       with:
-          path: output/
+          path: site/
 
   deploy:
     environment:
